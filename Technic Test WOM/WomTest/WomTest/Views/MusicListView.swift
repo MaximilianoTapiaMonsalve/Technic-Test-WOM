@@ -16,18 +16,26 @@ struct MusicListView: View {
     
     var body: some View {
         NavigationView{
-            ZStack{
-                
+            VStack{
+                Text("Top Songs")
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .padding(.top , 10)
                 List{
-                    ForEach(viewModel.songs,id: \.title){song in
-                        Text(song.title)
+                    Section{
+                        ForEach(viewModel.songs,id: \.id){song in
+                            Text(song.name)
+                        }
+                    }header: {
+                        Text("\(viewModel.songs.count) songs")
                     }
+                    
                     .listRowBackground(Color.white)
                     
                 }
             }
-            .navigationTitle("a")
-            .navigationBarTitleDisplayMode(.automatic)
+            
+            .navigationBarTitle("",displayMode: .automatic)
             .background(Color("backgroundColor"))
             .scrollContentBackground(.hidden)
             

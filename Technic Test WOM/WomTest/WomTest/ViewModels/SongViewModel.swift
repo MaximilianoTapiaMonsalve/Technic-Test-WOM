@@ -36,7 +36,16 @@ class SongViewModel: ObservableObject {
                         let response = try JSONDecoder().decode(Response.self, from: data)
                         DispatchQueue.main.async {
                             self.songs += response.feed.entry.map{
-                                Song(title: $0.title.label)
+                                Song(
+                                     id: $0.id.attributes.imId,
+                                     name: $0.imName.label,
+                                     title: $0.title.label,
+                                     artist: $0.imArtist.label,
+                                     realeseDate: $0.imReleaseDate.attributes.label,
+                                     image: $0.imImage.first?.label ?? "",
+                                     price: Int($0.imPrice.attributes.amount) ?? 0,
+                                     currency: $0.imPrice.attributes.currency
+                                )
                             }
                         }
                     } catch let error {

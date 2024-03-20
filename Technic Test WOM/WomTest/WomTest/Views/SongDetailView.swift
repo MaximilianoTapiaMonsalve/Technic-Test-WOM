@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct SongDetailView: View {
-    @StateObject private var viewModel = SongViewModel()
-    var song: Song
+    
     var body: some View {
-        Text(song.title)
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
 #Preview {
-    SongDetailView(song: Song(title: "Test song"))
+    SongDetailView()
 }

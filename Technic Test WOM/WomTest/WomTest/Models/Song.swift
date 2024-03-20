@@ -8,8 +8,9 @@
 import Foundation
 
 struct Song: Identifiable,Hashable{
-    let id = UUID()
-    let title: String
+    let id,name,title,artist,realeseDate,image: String
+    let price: Int
+    let currency: String
     
     func hash(into hasher: inout Hasher) {
             hasher.combine(id)
@@ -19,3 +20,4 @@ struct Song: Identifiable,Hashable{
             return lhs.id == rhs.id
         }
 }
+
