@@ -42,7 +42,7 @@ class SongViewModel: ObservableObject {
                                      title: $0.title.label,
                                      artist: $0.imArtist.label,
                                      realeseDate: $0.imReleaseDate.attributes.label,
-                                     image: $0.imImage.first?.label ?? "",
+                                     image: $0.imImage,
                                      price: Int($0.imPrice.attributes.amount) ?? 0,
                                      currency: $0.imPrice.attributes.currency
                                 )

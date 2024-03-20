@@ -23,8 +23,31 @@ struct MusicListView: View {
                     .padding(.top , 10)
                 List{
                     Section{
-                        ForEach(viewModel.songs,id: \.id){song in
-                            Text(song.name)
+                        
+                        ForEach(viewModel.songs.sorted(by:{$0.name < $1.name}),id: \.id){song in
+                            NavigationLink(destination: SongDetailView(song: song)){
+                                
+                                HStack(alignment: .center){
+                                    
+                                    AsyncImage(url: URL(string: song.image.first?.label ?? ""))
+                                        .frame(width: 55, height: 55)
+                                        .clipShape(RoundedRectangle(cornerRadius: 5))
+                                    
+                                    VStack(alignment:.leading){
+                                        
+                                        Text(song.name)
+                                            .fontWeight(.semibold)
+                                            .lineLimit(1)
+                                            .minimumScaleFactor(0.9)
+                                        
+                                        Text(song.artist)
+                                            .font(.subheadline)
+                                            .lineLimit(1)
+                                    }
+                                    
+                                }
+                            }
+                            
                         }
                     }header: {
                         Text("\(viewModel.songs.count) songs")

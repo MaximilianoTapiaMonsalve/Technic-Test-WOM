@@ -8,9 +8,11 @@
 import Foundation
 
 struct Song: Identifiable,Hashable{
-    let id,name,title,artist,realeseDate,image: String
+    let id,name,title,artist,realeseDate: String
+    let image: [IMImage]
     let price: Int
     let currency: String
+    
     
     func hash(into hasher: inout Hasher) {
             hasher.combine(id)
