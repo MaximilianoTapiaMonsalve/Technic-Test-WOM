@@ -8,35 +8,25 @@
 import SwiftUI
 
 struct MusicListView: View {
+    @StateObject private var viewModel = SongViewModel()
+    
     var body: some View {
         NavigationView {
-            List(0 ..< 20){ item in
-                HStack {
-                    Image("Image-aux")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 70)
-                        .clipShape(.rect(cornerRadius:  4))
-                    
-                    
-                    VStack(alignment: .leading,spacing: 5){
-                        
-                        Text("Titulo de la canción")
-                            .fontWeight(.semibold)
-                            .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
-                            .minimumScaleFactor(0.5)
-                        
-                        Text("Fecha")
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
-                    }
+            List(viewModel.songs.sorted(by: {$0.title < $1.title}), id: \.title){ song in
+                ZStack{
+                    Text(song.title)
                 }
-            }
-            .navigationTitle("List Title")
+                
+            }.navigationTitle("Top Songs")
+        }.onAppear {
+            viewModel.loadData(for: ["cl","us","se"])
+            
         }
     }
 }
 
-#Preview {
-    MusicListView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        MusicListView()
+    }
 }
