@@ -10,56 +10,63 @@ import SwiftUI
 struct MusicListView: View {
     @StateObject private var viewModel = SongViewModel()
     
+    
     init() {
         UINavigationBar.appearance().barTintColor = UIColor(Color("backgroundColor"))
     }
     
     var body: some View {
-        NavigationView{
-            VStack{
-                Text("Top Songs")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding(.top , 10)
-                List{
-                    Section{
-                        
-                        ForEach(viewModel.songs.sorted(by:{$0.name < $1.name}),id: \.id){song in
-                            NavigationLink(destination: SongDetailView(song: song)){
-                                
-                                HStack(alignment: .center){
+        TabView{
+            NavigationView{
+                VStack{
+                    List{
+                        Section{
+                            
+                            ForEach(viewModel.songs.sorted(by:{$0.name < $1.name}),id: \.id){song in
+                                NavigationLink(destination: SongDetailView(song: song)){
                                     
-                                    AsyncImage(url: URL(string: song.image.first?.label ?? ""))
-                                        .frame(width: 55, height: 55)
-                                        .clipShape(RoundedRectangle(cornerRadius: 5))
-                                    
-                                    VStack(alignment:.leading){
+                                    HStack(alignment: .center){
                                         
-                                        Text(song.name)
-                                            .fontWeight(.semibold)
-                                            .lineLimit(1)
-                                            .minimumScaleFactor(0.9)
+                                        AsyncImage(url: URL(string: song.image.first?.label ?? ""))
+                                            .frame(width: 55, height: 55)
+                                            .clipShape(RoundedRectangle(cornerRadius: 5))
                                         
-                                        Text(song.artist)
-                                            .font(.subheadline)
-                                            .lineLimit(1)
+                                        VStack(alignment:.leading){
+                                            
+                                            Text(song.name)
+                                                .fontWeight(.semibold)
+                                                .lineLimit(1)
+                                                .minimumScaleFactor(0.9)
+                                            
+                                            Text(song.artist)
+                                                .font(.subheadline)
+                                                .lineLimit(1)
+                                        }
                                     }
                                 }
                             }
+                        }header: {
+                            Text("\(viewModel.songs.count) songs")
                         }
-                    }header: {
-                        Text("\(viewModel.songs.count) songs")
+                        
+                        .listRowBackground(Color.white)
+                        
                     }
-                    
-                    .listRowBackground(Color.white)
-                    
                 }
+                .navigationTitle("Top Songs")
+                .background(Color("backgroundColor"))
+                .scrollContentBackground(.hidden)
+                
+            }.tabItem{
+                Image(systemName:"house")
+                Text("Home")
+                
             }
-            
-            .navigationBarTitle("",displayMode: .automatic)
-            .background(Color("backgroundColor"))
-            .scrollContentBackground(.hidden)
-            
+            Text("test")
+            .tabItem{
+                Image(systemName: "person")
+                Text("Favoritos")
+            }
         }
     }
 }
