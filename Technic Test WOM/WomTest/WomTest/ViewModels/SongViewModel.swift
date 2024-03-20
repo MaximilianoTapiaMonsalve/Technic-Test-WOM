@@ -3,7 +3,9 @@ import Foundation
 class SongViewModel: ObservableObject {
     @Published var songs: [Song] = []
     
-    
+    init(){
+        loadData(for: ["us","cl","se"])
+    }
     
     func loadData(for countries: [String]) {
         let group = DispatchGroup()
@@ -13,7 +15,7 @@ class SongViewModel: ObservableObject {
                 continue
             }
             group.enter()
-
+            
             URLSession.shared.dataTask(with: url) { data, response, error in
                 defer{
                     group.leave()
@@ -30,7 +32,6 @@ class SongViewModel: ObservableObject {
                 }
                 
                 if let data = data {
-                    //print(String(data: data, encoding: .utf8)!)
                     do {
                         let response = try JSONDecoder().decode(Response.self, from: data)
                         DispatchQueue.main.async {
@@ -53,7 +54,7 @@ class SongViewModel: ObservableObject {
     }
     private func removeDuplicate(){
         self.songs = Array(Set(self.songs))
-        print(songs.count)
+        print(self.songs.count)
     }
 }
-                                                                  
+

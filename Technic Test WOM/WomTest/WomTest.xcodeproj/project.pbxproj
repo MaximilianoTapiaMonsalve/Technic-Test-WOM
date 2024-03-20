@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5525BD682BAA3CF00057F935 /* SongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525BD672BAA3CF00057F935 /* SongViewModel.swift */; };
-		5525BD6E2BAA706F0057F935 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525BD6D2BAA706F0057F935 /* ResponseModel.swift */; };
-		5525BD702BAA70970057F935 /* SongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525BD6F2BAA70970057F935 /* SongModel.swift */; };
+		5525BD6E2BAA706F0057F935 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525BD6D2BAA706F0057F935 /* Response.swift */; };
+		5525BD702BAA70970057F935 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525BD6F2BAA70970057F935 /* Song.swift */; };
+		5525BD722BAAA0E00057F935 /* SongDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525BD712BAAA0E00057F935 /* SongDetailView.swift */; };
 		55F563C62BAA0AB5005F87AF /* WomTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F563C52BAA0AB5005F87AF /* WomTestApp.swift */; };
 		55F563C82BAA0AB5005F87AF /* MusicListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F563C72BAA0AB5005F87AF /* MusicListView.swift */; };
 		55F563CA2BAA0AB7005F87AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F563C92BAA0AB7005F87AF /* Assets.xcassets */; };
@@ -34,8 +35,9 @@
 
 /* Begin PBXFileReference section */
 		5525BD672BAA3CF00057F935 /* SongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewModel.swift; sourceTree = "<group>"; };
-		5525BD6D2BAA706F0057F935 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
-		5525BD6F2BAA70970057F935 /* SongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongModel.swift; sourceTree = "<group>"; };
+		5525BD6D2BAA706F0057F935 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		5525BD6F2BAA70970057F935 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		5525BD712BAAA0E00057F935 /* SongDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailView.swift; sourceTree = "<group>"; };
 		55F563C22BAA0AB5005F87AF /* WomTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WomTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F563C52BAA0AB5005F87AF /* WomTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WomTestApp.swift; sourceTree = "<group>"; };
 		55F563C72BAA0AB5005F87AF /* MusicListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListView.swift; sourceTree = "<group>"; };
@@ -102,8 +104,8 @@
 		55F563F02BAA0C74005F87AF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5525BD6D2BAA706F0057F935 /* ResponseModel.swift */,
-				5525BD6F2BAA70970057F935 /* SongModel.swift */,
+				5525BD6D2BAA706F0057F935 /* Response.swift */,
+				5525BD6F2BAA70970057F935 /* Song.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				55F563C72BAA0AB5005F87AF /* MusicListView.swift */,
+				5525BD712BAAA0E00057F935 /* SongDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -254,10 +257,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5525BD682BAA3CF00057F935 /* SongViewModel.swift in Sources */,
-				5525BD702BAA70970057F935 /* SongModel.swift in Sources */,
+				5525BD702BAA70970057F935 /* Song.swift in Sources */,
 				55F563C82BAA0AB5005F87AF /* MusicListView.swift in Sources */,
 				55F563C62BAA0AB5005F87AF /* WomTestApp.swift in Sources */,
-				5525BD6E2BAA706F0057F935 /* ResponseModel.swift in Sources */,
+				5525BD722BAAA0E00057F935 /* SongDetailView.swift in Sources */,
+				5525BD6E2BAA706F0057F935 /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

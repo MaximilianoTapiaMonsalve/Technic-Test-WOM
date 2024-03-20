@@ -10,16 +10,26 @@ import SwiftUI
 struct MusicListView: View {
     @StateObject private var viewModel = SongViewModel()
     
+    init() {
+        UINavigationBar.appearance().barTintColor = UIColor(Color("backgroundColor"))
+    }
+    
     var body: some View {
-        NavigationView {
-            List(viewModel.songs.sorted(by: {$0.title < $1.title}), id: \.title){ song in
-                ZStack{
-                    Text(song.title)
-                }
+        NavigationView{
+            ZStack{
                 
-            }.navigationTitle("Top Songs")
-        }.onAppear {
-            viewModel.loadData(for: ["cl","us","se"])
+                List{
+                    ForEach(viewModel.songs,id: \.title){song in
+                        Text(song.title)
+                    }
+                    .listRowBackground(Color.white)
+                    
+                }
+            }
+            .navigationTitle("a")
+            .navigationBarTitleDisplayMode(.automatic)
+            .background(Color("backgroundColor"))
+            .scrollContentBackground(.hidden)
             
         }
     }
