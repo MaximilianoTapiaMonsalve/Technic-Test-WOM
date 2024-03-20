@@ -43,8 +43,7 @@ class SongViewModel: ObservableObject {
                                      artist: $0.imArtist.label,
                                      realeseDate: $0.imReleaseDate.attributes.label,
                                      image: $0.imImage,
-                                     price: Int($0.imPrice.attributes.amount) ?? 0,
-                                     currency: $0.imPrice.attributes.currency
+                                     price: $0.imPrice.label
                                 )
                             }
                         }
@@ -63,7 +62,6 @@ class SongViewModel: ObservableObject {
     }
     private func removeDuplicate(){
         self.songs = Array(Set(self.songs))
-        print(self.songs.count)
     }
 }
 

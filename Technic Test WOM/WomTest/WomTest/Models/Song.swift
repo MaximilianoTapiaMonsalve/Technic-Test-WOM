@@ -10,8 +10,8 @@ import Foundation
 struct Song: Identifiable,Hashable{
     let id,name,title,artist,realeseDate: String
     let image: [IMImage]
-    let price: Int
-    let currency: String
+    let price: String
+    
     
     
     func hash(into hasher: inout Hasher) {

@@ -18,8 +18,8 @@ struct MusicListView: View {
         NavigationView{
             VStack{
                 Text("Top Songs")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .font(.title)
+                    .fontWeight(.bold)
                     .padding(.top , 10)
                 List{
                     Section{
@@ -44,10 +44,8 @@ struct MusicListView: View {
                                             .font(.subheadline)
                                             .lineLimit(1)
                                     }
-                                    
                                 }
                             }
-                            
                         }
                     }header: {
                         Text("\(viewModel.songs.count) songs")
