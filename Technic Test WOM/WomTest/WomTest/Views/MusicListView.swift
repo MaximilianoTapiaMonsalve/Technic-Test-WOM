@@ -58,14 +58,14 @@ struct MusicListView: View {
                 .scrollContentBackground(.hidden)
                 
             }.tabItem{
-                Image(systemName:"house")
-                Text("Home")
+                Image(systemName:"music.note.list")
+                Text("Top Songs")
                 
             }
-            Text("test")
+            FavoritesView()
             .tabItem{
-                Image(systemName: "person")
-                Text("Favoritos")
+                Image(systemName: "star")
+                Text("Favorites")
             }
         }
     }
