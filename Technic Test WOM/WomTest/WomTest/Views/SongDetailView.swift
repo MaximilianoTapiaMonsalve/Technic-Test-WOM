@@ -25,15 +25,7 @@ struct SongDetailView: View {
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .fontWeight(.semibold)
                 
-                AsyncImage(url: URL(string: song.image.last?.label ?? "")){image in
-                    image
-                        .resizable()
-                        .frame(width: 300, height: 300)
-                        .scaledToFit()
-                        .clipShape(RoundedRectangle(cornerRadius: 15))
-                }placeholder: {
-                    ProgressView()
-                }
+                AlbumImage(song: song)
                 
                 Text(song.title)
                     .font(.title2)
@@ -43,38 +35,22 @@ struct SongDetailView: View {
                     .padding(.horizontal, 20)
                 
                 
+                SongDetail(song: song)
                 
-                HStack(spacing:20){
-                    Text(song.artist)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                    Text(song.realeseDate)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                }
                 Spacer()
-                Button(action: {
-                    print("Comprar")
-                }, label: {
-                    Text(song.price)
-                        .frame(width: 200)
-                        .padding()
-                        .background(Color.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 150))
-                })
-                .padding()
-                .toolbar{
-                    ToolbarItem{
-                        Button(action: {
-                            
-                            viewModel.toggleFavorite(song: song)
-                        }, label: {
-                            Image(systemName: isFav ? "hear.fill" : "heart")
-                        })
-                    }
-                }
                 
-            }
+                BuyButton(viewModel: viewModel, song: song, isfav: $isFav)
+                    .toolbar{
+                        ToolbarItem{
+                            Button(action: {
+                               isFav = viewModel.toggleFavorite(song: song)
+                                
+                            }, label: {
+                                Image(systemName: song.isfav ? "suit.heart.fill" : "heart")
+                            })
+                        }
+                    }
+        }
             
         }
         
@@ -86,6 +62,58 @@ struct SongDetailView: View {
 #Preview{
     MusicListView()
 }
-//#Preview {
-//    SongDetailView(song: Song(id: "id", name: "name", title: "Titulo de la canción", artist: "artist", realeseDate: "realese date", image: [IMImage(label: "", attributes: IMImageAttributes(height: "170"))], price: "490"))
-//}
+
+
+struct AlbumImage: View {
+    var song: Song
+    var body: some View {
+        AsyncImage(url: URL(string: song.image.last?.label ?? "")){image in
+            image
+                .resizable()
+                .frame(width: 300, height: 300)
+                .scaledToFit()
+                .clipShape(RoundedRectangle(cornerRadius: 15))
+        }placeholder: {
+            ProgressView()
+        }
+    }
+}
+
+struct SongDetail: View {
+    var song: Song
+    var body: some View {
+        
+        HStack(spacing:20){
+            
+            Text(song.artist)
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+            
+            Text(song.realeseDate)
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+        }
+    }
+}
+
+struct BuyButton: View {
+    
+    @StateObject var viewModel: FavoritesViewModel
+    
+    let song: Song
+    @Binding var isfav: Bool
+    
+    var body: some View {
+        Button(action: {
+            print("Comprar")
+        }, label: {
+            Text(song.price)
+                .frame(width: 200)
+                .padding()
+                .background(Color.white)
+                .clipShape(RoundedRectangle(cornerRadius: 150))
+        })
+        .padding()
+        
+    }
+}

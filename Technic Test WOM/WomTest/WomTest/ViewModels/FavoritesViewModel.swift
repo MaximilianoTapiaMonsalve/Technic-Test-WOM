@@ -10,15 +10,17 @@ import Foundation
 class FavoritesViewModel:ObservableObject{
     @Published var favoritesSongs: [Song] = []
     
-    func toggleFavorite(song: Song){
+    
+    func toggleFavorite(song: Song)-> Bool{
+        
         if let index = favoritesSongs.firstIndex(where: {$0.id == song.id}){
-            
             favoritesSongs.remove(at: index)
-            
-            
         }else{
             favoritesSongs.append(song)
         }
+        
         song.isfav.toggle()
+        
+        return song.isfav
     }
 }
