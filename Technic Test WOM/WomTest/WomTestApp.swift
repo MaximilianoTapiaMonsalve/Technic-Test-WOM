@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct WomTestApp: App {
+    @Environment(\.colorScheme) var colorScheme
     var body: some Scene {
         WindowGroup {
             MusicListView()
+                .preferredColorScheme(.light)
         }
     }
 }
