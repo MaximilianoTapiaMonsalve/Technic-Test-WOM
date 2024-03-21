@@ -7,12 +7,22 @@
 
 import SwiftUI
 
+
 struct FavoritesView: View {
+    @ObservedObject var viewModel: FavoritesViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            
+            ForEach(viewModel.favoritesSongs,id: \.id){ song in
+                Text(song.name)
+            }
+        }
     }
 }
 
 #Preview {
-    FavoritesView()
+   
+    FavoritesView(viewModel: FavoritesViewModel())
 }
+

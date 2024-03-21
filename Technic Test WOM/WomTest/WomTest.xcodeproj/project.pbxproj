@@ -13,6 +13,7 @@
 		5525BD752BAB85810057F935 /* SongDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525BD742BAB85810057F935 /* SongDetailView.swift */; };
 		5525BD772BAB8E2B0057F935 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525BD762BAB8E2B0057F935 /* FavoritesView.swift */; };
 		5525BD792BAB8F330057F935 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525BD782BAB8F330057F935 /* FavoritesViewModel.swift */; };
+		5525BD7B2BAB92BD0057F935 /* SongListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525BD7A2BAB92BD0057F935 /* SongListView.swift */; };
 		55F563C62BAA0AB5005F87AF /* WomTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F563C52BAA0AB5005F87AF /* WomTestApp.swift */; };
 		55F563C82BAA0AB5005F87AF /* MusicListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F563C72BAA0AB5005F87AF /* MusicListView.swift */; };
 		55F563CA2BAA0AB7005F87AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F563C92BAA0AB7005F87AF /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		5525BD742BAB85810057F935 /* SongDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailView.swift; sourceTree = "<group>"; };
 		5525BD762BAB8E2B0057F935 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		5525BD782BAB8F330057F935 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		5525BD7A2BAB92BD0057F935 /* SongListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListView.swift; sourceTree = "<group>"; };
 		55F563C22BAA0AB5005F87AF /* WomTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WomTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F563C52BAA0AB5005F87AF /* WomTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WomTestApp.swift; sourceTree = "<group>"; };
 		55F563C72BAA0AB5005F87AF /* MusicListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListView.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				55F563C72BAA0AB5005F87AF /* MusicListView.swift */,
 				5525BD742BAB85810057F935 /* SongDetailView.swift */,
 				5525BD762BAB8E2B0057F935 /* FavoritesView.swift */,
+				5525BD7A2BAB92BD0057F935 /* SongListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				55F563C62BAA0AB5005F87AF /* WomTestApp.swift in Sources */,
 				5525BD772BAB8E2B0057F935 /* FavoritesView.swift in Sources */,
 				5525BD752BAB85810057F935 /* SongDetailView.swift in Sources */,
+				5525BD7B2BAB92BD0057F935 /* SongListView.swift in Sources */,
 				5525BD6E2BAA706F0057F935 /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

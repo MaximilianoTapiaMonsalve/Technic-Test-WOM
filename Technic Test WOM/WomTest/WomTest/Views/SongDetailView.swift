@@ -9,6 +9,9 @@ import SwiftUI
 
 struct SongDetailView: View {
     
+    @StateObject var viewModel: FavoritesViewModel
+    @State private var isFav: Bool = false;
+    
     var song: Song
     
     
@@ -63,9 +66,10 @@ struct SongDetailView: View {
                 .toolbar{
                     ToolbarItem{
                         Button(action: {
-                            print("Favoritos")
+                            
+                            viewModel.toggleFavorite(song: song)
                         }, label: {
-                            Image(systemName:"heart")
+                            Image(systemName: isFav ? "hear.fill" : "heart")
                         })
                     }
                 }

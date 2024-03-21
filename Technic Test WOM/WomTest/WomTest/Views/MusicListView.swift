@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MusicListView: View {
-    @StateObject private var viewModel = SongViewModel()
+    @StateObject private var favoritesViewModel = FavoritesViewModel()
     
     
     init() {
@@ -17,56 +17,18 @@ struct MusicListView: View {
     
     var body: some View {
         TabView{
-            NavigationView{
-                VStack{
-                    List{
-                        Section{
-                            
-                            ForEach(viewModel.songs.sorted(by:{$0.name < $1.name}),id: \.id){song in
-                                NavigationLink(destination: SongDetailView(song: song)){
-                                    
-                                    HStack(alignment: .center){
-                                        
-                                        AsyncImage(url: URL(string: song.image.first?.label ?? ""))
-                                            .frame(width: 55, height: 55)
-                                            .clipShape(RoundedRectangle(cornerRadius: 5))
-                                        
-                                        VStack(alignment:.leading){
-                                            
-                                            Text(song.name)
-                                                .fontWeight(.semibold)
-                                                .lineLimit(1)
-                                                .minimumScaleFactor(0.9)
-                                            
-                                            Text(song.artist)
-                                                .font(.subheadline)
-                                                .lineLimit(1)
-                                        }
-                                    }
-                                }
-                            }
-                        }header: {
-                            Text("\(viewModel.songs.count) songs")
-                        }
-                        
-                        .listRowBackground(Color.white)
-                        
-                    }
+            SongListView(favViewModel: favoritesViewModel)
+                .tabItem{
+                    Image(systemName:"music.note.list")
+                    Text("Top Songs")
+                    
                 }
-                .navigationTitle("Top Songs")
-                .background(Color("backgroundColor"))
-                .scrollContentBackground(.hidden)
-                
-            }.tabItem{
-                Image(systemName:"music.note.list")
-                Text("Top Songs")
-                
-            }
-            FavoritesView()
-            .tabItem{
-                Image(systemName: "star")
-                Text("Favorites")
-            }
+            FavoritesView(viewModel: favoritesViewModel)
+                .tabItem{
+                    Image(systemName: "star")
+                    Text("Favorites")
+                }
+            
         }
     }
 }
