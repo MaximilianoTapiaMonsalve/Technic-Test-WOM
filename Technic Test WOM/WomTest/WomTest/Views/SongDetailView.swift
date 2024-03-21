@@ -107,7 +107,7 @@ struct BuyButton: View {
         Button(action: {
             print("Comprar")
         }, label: {
-            Text(song.price)
+            Text("Buy: " + song.price)
                 .frame(width: 200)
                 .padding()
                 .background(Color.white)

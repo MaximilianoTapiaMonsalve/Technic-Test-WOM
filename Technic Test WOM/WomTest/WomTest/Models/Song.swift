@@ -11,7 +11,8 @@ class Song: Identifiable, Hashable, ObservableObject{
     let id ,name,title,artist,realeseDate: String
     let image: [IMImage]
     let price: String
-   @Published var isfav: Bool = false
+    @Published var isfav: Bool = false
+    
     
     init(id: String ,name: String, title: String, artist: String, realeseDate: String, image: [IMImage], price: String) {
         self.id = id

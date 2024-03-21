@@ -49,7 +49,7 @@ class SongViewModel: ObservableObject {
                         }
                     } catch let error {
                         print("Error on JSON: \(error)")
-                        print("REsponse data: \(String(data: data, encoding: .utf8) ?? "nil")" )
+                        //print("REsponse data: \(String(data: data, encoding: .utf8) ?? "nil")" )
                     }
                 }
             }.resume()

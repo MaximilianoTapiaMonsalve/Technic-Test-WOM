@@ -19,23 +19,6 @@
 		55F563CA2BAA0AB7005F87AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F563C92BAA0AB7005F87AF /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		55F563D32BAA0AB7005F87AF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 55F563BA2BAA0AB5005F87AF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 55F563C12BAA0AB5005F87AF;
-			remoteInfo = WomTest;
-		};
-		55F563DD2BAA0AB7005F87AF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 55F563BA2BAA0AB5005F87AF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 55F563C12BAA0AB5005F87AF;
-			remoteInfo = WomTest;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		5525BD672BAA3CF00057F935 /* SongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewModel.swift; sourceTree = "<group>"; };
 		5525BD6D2BAA706F0057F935 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -49,26 +32,10 @@
 		55F563C52BAA0AB5005F87AF /* WomTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WomTestApp.swift; sourceTree = "<group>"; };
 		55F563C72BAA0AB5005F87AF /* MusicListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListView.swift; sourceTree = "<group>"; };
 		55F563C92BAA0AB7005F87AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		55F563D22BAA0AB7005F87AF /* WomTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WomTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		55F563DC2BAA0AB7005F87AF /* WomTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WomTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		55F563BF2BAA0AB5005F87AF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		55F563CF2BAA0AB7005F87AF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		55F563D92BAA0AB7005F87AF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -90,8 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				55F563C22BAA0AB5005F87AF /* WomTest.app */,
-				55F563D22BAA0AB7005F87AF /* WomTestTests.xctest */,
-				55F563DC2BAA0AB7005F87AF /* WomTestUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,42 +123,6 @@
 			productReference = 55F563C22BAA0AB5005F87AF /* WomTest.app */;
 			productType = "com.apple.product-type.application";
 		};
-		55F563D12BAA0AB7005F87AF /* WomTestTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 55F563E92BAA0AB7005F87AF /* Build configuration list for PBXNativeTarget "WomTestTests" */;
-			buildPhases = (
-				55F563CE2BAA0AB7005F87AF /* Sources */,
-				55F563CF2BAA0AB7005F87AF /* Frameworks */,
-				55F563D02BAA0AB7005F87AF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				55F563D42BAA0AB7005F87AF /* PBXTargetDependency */,
-			);
-			name = WomTestTests;
-			productName = WomTestTests;
-			productReference = 55F563D22BAA0AB7005F87AF /* WomTestTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		55F563DB2BAA0AB7005F87AF /* WomTestUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 55F563EC2BAA0AB7005F87AF /* Build configuration list for PBXNativeTarget "WomTestUITests" */;
-			buildPhases = (
-				55F563D82BAA0AB7005F87AF /* Sources */,
-				55F563D92BAA0AB7005F87AF /* Frameworks */,
-				55F563DA2BAA0AB7005F87AF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				55F563DE2BAA0AB7005F87AF /* PBXTargetDependency */,
-			);
-			name = WomTestUITests;
-			productName = WomTestUITests;
-			productReference = 55F563DC2BAA0AB7005F87AF /* WomTestUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -206,14 +135,6 @@
 				TargetAttributes = {
 					55F563C12BAA0AB5005F87AF = {
 						CreatedOnToolsVersion = 15.2;
-					};
-					55F563D12BAA0AB7005F87AF = {
-						CreatedOnToolsVersion = 15.2;
-						TestTargetID = 55F563C12BAA0AB5005F87AF;
-					};
-					55F563DB2BAA0AB7005F87AF = {
-						CreatedOnToolsVersion = 15.2;
-						TestTargetID = 55F563C12BAA0AB5005F87AF;
 					};
 				};
 			};
@@ -231,8 +152,6 @@
 			projectRoot = "";
 			targets = (
 				55F563C12BAA0AB5005F87AF /* WomTest */,
-				55F563D12BAA0AB7005F87AF /* WomTestTests */,
-				55F563DB2BAA0AB7005F87AF /* WomTestUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -243,20 +162,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				55F563CA2BAA0AB7005F87AF /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		55F563D02BAA0AB7005F87AF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		55F563DA2BAA0AB7005F87AF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,34 +184,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		55F563CE2BAA0AB7005F87AF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		55F563D82BAA0AB7005F87AF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		55F563D42BAA0AB7005F87AF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 55F563C12BAA0AB5005F87AF /* WomTest */;
-			targetProxy = 55F563D32BAA0AB7005F87AF /* PBXContainerItemProxy */;
-		};
-		55F563DE2BAA0AB7005F87AF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 55F563C12BAA0AB5005F87AF /* WomTest */;
-			targetProxy = 55F563DD2BAA0AB7005F87AF /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		55F563E42BAA0AB7005F87AF /* Debug */ = {
@@ -494,82 +372,6 @@
 			};
 			name = Release;
 		};
-		55F563EA2BAA0AB7005F87AF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R225QJ37B4;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.mapia.WomTestTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WomTest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WomTest";
-			};
-			name = Debug;
-		};
-		55F563EB2BAA0AB7005F87AF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R225QJ37B4;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.mapia.WomTestTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WomTest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WomTest";
-			};
-			name = Release;
-		};
-		55F563ED2BAA0AB7005F87AF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R225QJ37B4;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.mapia.WomTestUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = WomTest;
-			};
-			name = Debug;
-		};
-		55F563EE2BAA0AB7005F87AF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R225QJ37B4;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.mapia.WomTestUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = WomTest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -587,24 +389,6 @@
 			buildConfigurations = (
 				55F563E72BAA0AB7005F87AF /* Debug */,
 				55F563E82BAA0AB7005F87AF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		55F563E92BAA0AB7005F87AF /* Build configuration list for PBXNativeTarget "WomTestTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				55F563EA2BAA0AB7005F87AF /* Debug */,
-				55F563EB2BAA0AB7005F87AF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		55F563EC2BAA0AB7005F87AF /* Build configuration list for PBXNativeTarget "WomTestUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				55F563ED2BAA0AB7005F87AF /* Debug */,
-				55F563EE2BAA0AB7005F87AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

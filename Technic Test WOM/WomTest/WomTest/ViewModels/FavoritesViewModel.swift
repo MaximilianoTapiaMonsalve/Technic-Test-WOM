@@ -9,7 +9,21 @@ import Foundation
 
 class FavoritesViewModel:ObservableObject{
     @Published var favoritesSongs: [Song] = []
+    @Published var isEditing: Bool = false
+    @Published var selectedSongs: Set<Song> = []
     
+    func toggleSelection(for song: Song){
+        if selectedSongs.contains(song){
+            selectedSongs.remove(song)
+        } else {
+            selectedSongs.insert(song)
+        }
+    }
+    
+    func deleteSelectedSongs(){
+        favoritesSongs = favoritesSongs.filter{ !selectedSongs.contains($0) }
+        selectedSongs.removeAll()
+    }
     
     func toggleFavorite(song: Song)-> Bool{
         
