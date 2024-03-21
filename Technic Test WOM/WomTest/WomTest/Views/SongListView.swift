@@ -50,6 +50,7 @@ struct SongList: View {
                                     Text(song.artist)
                                         .font(.subheadline)
                                         .lineLimit(1)
+                                        .foregroundColor(.secondary)
                                 }
                             }
                         }

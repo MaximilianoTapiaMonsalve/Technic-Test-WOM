@@ -47,7 +47,7 @@ struct Entry: Codable {
     let id: ID
     let imArtist: IMArtist
     let category: Category
-    let imReleaseDate: IMReleaseDate
+    let imReleaseDate: IMReleaseDate?
 
     enum CodingKeys: String, CodingKey {
         case imName = "im:name"

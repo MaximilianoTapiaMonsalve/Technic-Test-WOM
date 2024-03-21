@@ -22,6 +22,9 @@ class FavoritesViewModel:ObservableObject{
     
     func deleteSelectedSongs(){
         favoritesSongs = favoritesSongs.filter{ !selectedSongs.contains($0) }
+        for song in selectedSongs{
+            song.isfav = false
+        }
         selectedSongs.removeAll()
     }
     

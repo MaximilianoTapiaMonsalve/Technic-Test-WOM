@@ -41,7 +41,7 @@ class SongViewModel: ObservableObject {
                                      name: $0.imName.label,
                                      title: $0.title.label,
                                      artist: $0.imArtist.label,
-                                     realeseDate: $0.imReleaseDate.attributes.label,
+                                     realeseDate: $0.imReleaseDate?.attributes.label ?? "n/a",
                                      image: $0.imImage,
                                      price: $0.imPrice.label
                                 )
