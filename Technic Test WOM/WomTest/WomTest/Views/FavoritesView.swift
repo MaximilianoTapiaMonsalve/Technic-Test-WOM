@@ -15,51 +15,58 @@ struct FavoritesView: View {
     var body: some View {
         
         NavigationView{
-            ZStack{
-                Color("backgroundColor").ignoresSafeArea()
+            
+                
                 if viewModel.favoritesSongs.isEmpty {
-                    Text("You dont have favorites songs yet")
-                        .font(.subheadline)
-                        .fontWeight(.semibold)
-                        .foregroundStyle(.secondary)
+                    ZStack{
+                        Color("backgroundColor").ignoresSafeArea()
+                        Text("You don't have favorites songs")
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .foregroundStyle(.secondary)
+                    }
                 } else {
-                    List(viewModel.favoritesSongs.sorted(by: {$0.id < $1.id}), id:\.id) { song in
-                        SongTile(viewModel: viewModel, song: song)
+                    ZStack{
+                        Color("backgroundColor").ignoresSafeArea()
+                        List(viewModel.favoritesSongs.sorted(by: {$0.id < $1.id}), id:\.id) { song in
+                            SongTile(viewModel: viewModel, song: song)
+                            
+                        }
+                    }
+                    .navigationTitle("Favorites songs")
+                    .navigationBarTitleDisplayMode(.large)
+                    .background(Color("backgroundColor"))
+                    
+                    .toolbar{
+                        ToolbarItem{
+                            Button(action: {
+                                if viewModel.isEditing{
+                                    viewModel.deleteSelectedSongs()
+                                }
+                                viewModel.isEditing.toggle()
+                                
+                            }, label: {
+                                if viewModel.isEditing{
+                                    Text("delete selection")
+                                }else{
+                                    Image(systemName: "trash")
+                                }
+                                
+                                
+                                
+                            })
+                        }
                         
                     }
                 }
                 
                 
             }
-            .navigationTitle("Favorites songs")
-            .navigationBarTitleDisplayMode(.large)
-            .background(Color("backgroundColor"))
             
-            .toolbar{
-                ToolbarItem{
-                    Button(action: {
-                        if viewModel.isEditing{
-                            viewModel.deleteSelectedSongs()
-                        }
-                        viewModel.isEditing.toggle()
-                        
-                    }, label: {
-                        if viewModel.isEditing{
-                            Text("delete selection")
-                        }else{
-                            Image(systemName: "trash")
-                        }
-                        
-                        
-                        
-                    })
-                }
-                
-            }
             
         }
     }
-}
+
 
 #Preview {
     MusicListView()
