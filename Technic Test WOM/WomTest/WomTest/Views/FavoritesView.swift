@@ -15,8 +15,6 @@ struct FavoritesView: View {
     var body: some View {
         
         NavigationView{
-            
-                
                 if viewModel.favoritesSongs.isEmpty {
                     ZStack{
                         Color("backgroundColor").ignoresSafeArea()
@@ -29,8 +27,16 @@ struct FavoritesView: View {
                     ZStack{
                         Color("backgroundColor").ignoresSafeArea()
                         List(viewModel.favoritesSongs.sorted(by: {$0.id < $1.id}), id:\.id) { song in
-                            SongTile(viewModel: viewModel, song: song)
-                            
+                            if !viewModel.isEditing {
+                                NavigationLink(destination: SongDetailView(viewModel: viewModel, song: song)){
+                                    HStack{
+                                        SongTile(viewModel: viewModel, song: song)
+                                    }
+                                    
+                                    
+                                }
+                            } else {
+                                SongTile(viewModel: viewModel, song: song)                            }
                         }
                     }
                     .navigationTitle("Favorites songs")
@@ -51,9 +57,6 @@ struct FavoritesView: View {
                                 }else{
                                     Image(systemName: "trash")
                                 }
-                                
-                                
-                                
                             })
                         }
                         
@@ -79,40 +82,41 @@ struct SongTile: View {
     
     var song: Song
     var body: some View {
-        VStack{
-            
-            HStack(alignment: .center){
+        
+            VStack{
                 
-                if viewModel.isEditing{
-                    Image(systemName: viewModel.selectedSongs.contains(song) ? "checkmark.circle.fill" : "circle")
-                        .onTapGesture {
-                            viewModel.toggleSelection(for: song)
-                        }
-                        .foregroundColor(.blue)
-                        .padding(.trailing, 10)
-                }
-                
-                AsyncImage(url: URL(string: song.image.first?.label ?? ""))
-                    .frame(width: 55, height: 55)
-                    .clipShape(RoundedRectangle(cornerRadius: 5))
-                
-                VStack(alignment:.leading){
+                HStack(alignment: .center){
                     
-                    Text(song.name)
-                        .fontWeight(.semibold)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.9)
+                    if viewModel.isEditing{
+                        Image(systemName: viewModel.selectedSongs.contains(song) ? "checkmark.circle.fill" : "circle")
+                            .onTapGesture {
+                                viewModel.toggleSelection(for: song)
+                            }
+                            .foregroundColor(.blue)
+                            .padding(.trailing, 10)
+                    }
                     
-                    Text(song.artist)
-                        .font(.subheadline)
-                        .lineLimit(1)
+                    AsyncImage(url: URL(string: song.image.first?.label ?? ""))
+                        .frame(width: 55, height: 55)
+                        .clipShape(RoundedRectangle(cornerRadius: 5))
+                    
+                    VStack(alignment:.leading){
+                        
+                        Text(song.name)
+                            .fontWeight(.semibold)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.9)
+                        
+                        Text(song.artist)
+                            .font(.subheadline)
+                            .lineLimit(1)
+                    }
+                    Spacer()
                 }
-                Spacer()
+            }
+            .contentShape(Rectangle())
+            .onTapGesture {
+                    viewModel.toggleSelection(for: song)
             }
         }
-        .contentShape(Rectangle())
-        .onTapGesture {
-            viewModel.toggleSelection(for: song)
-        }
-    }
 }

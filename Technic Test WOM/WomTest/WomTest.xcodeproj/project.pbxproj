@@ -49,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				55F563C42BAA0AB5005F87AF /* WomTest */,
+				55F563C52BAA0AB5005F87AF /* WomTestApp.swift */,
 				55F563C32BAA0AB5005F87AF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,7 +69,6 @@
 				55F563F12BAA0C82005F87AF /* ViewModels */,
 				55F563F02BAA0C74005F87AF /* Models */,
 				55F563C92BAA0AB7005F87AF /* Assets.xcassets */,
-				55F563C52BAA0AB5005F87AF /* WomTestApp.swift */,
 				5525BD732BAB4DA40057F935 /* Empty.md */,
 			);
 			path = WomTest;
